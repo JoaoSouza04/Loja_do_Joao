@@ -26,8 +26,12 @@ mongoose
   })
 
 app.post('/', controllers.createProduct)
+app.get('/', controllers.getAllProducts)
+app.get('/:id', controllers.getProduct)
+app.patch('/:id', controllers.updateProduct)
+app.delete('/:id', controllers.deleteProduct)
 
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 3000
 app.listen(port, () => {
   console.log('Listening on port 3000!')
 })
